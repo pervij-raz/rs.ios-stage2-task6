@@ -8,28 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		AD6AABED24A1E9F6009AD02E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AABEC24A1E9F6009AD02E /* AppDelegate.m */; };
-		AD6AABF024A1E9F6009AD02E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AABEF24A1E9F6009AD02E /* SceneDelegate.m */; };
-		AD6AABF324A1E9F6009AD02E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AABF224A1E9F6009AD02E /* ViewController.m */; };
 		AD6AABF824A1E9F6009AD02E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD6AABF724A1E9F6009AD02E /* Assets.xcassets */; };
 		AD6AABFB24A1E9F6009AD02E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD6AABF924A1E9F6009AD02E /* LaunchScreen.storyboard */; };
 		AD6AABFE24A1E9F6009AD02E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AABFD24A1E9F6009AD02E /* main.m */; };
 		AD6AAC0E24A1FC72009AD02E /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC0D24A1FC72009AD02E /* Color.m */; };
+		AD6AAC1224A205C6009AD02E /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC1124A205C6009AD02E /* StartViewController.m */; };
+		AD6AAC1524A25733009AD02E /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC1424A25733009AD02E /* Triangle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD6AABE824A1E9F6009AD02E /* rs.ios-stage2-task6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rs.ios-stage2-task6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6AABEB24A1E9F6009AD02E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AD6AABEC24A1E9F6009AD02E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AD6AABEE24A1E9F6009AD02E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		AD6AABEF24A1E9F6009AD02E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		AD6AABF124A1E9F6009AD02E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AD6AABF224A1E9F6009AD02E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AD6AABF724A1E9F6009AD02E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD6AABFA24A1E9F6009AD02E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD6AABFC24A1E9F6009AD02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD6AABFD24A1E9F6009AD02E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD6AAC0D24A1FC72009AD02E /* Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
 		AD6AAC0F24A1FC98009AD02E /* Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		AD6AAC1024A205C6009AD02E /* StartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		AD6AAC1124A205C6009AD02E /* StartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		AD6AAC1324A25733009AD02E /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		AD6AAC1424A25733009AD02E /* Triangle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,16 +64,16 @@
 			children = (
 				AD6AABEB24A1E9F6009AD02E /* AppDelegate.h */,
 				AD6AABEC24A1E9F6009AD02E /* AppDelegate.m */,
-				AD6AABEE24A1E9F6009AD02E /* SceneDelegate.h */,
-				AD6AABEF24A1E9F6009AD02E /* SceneDelegate.m */,
-				AD6AABF124A1E9F6009AD02E /* ViewController.h */,
-				AD6AABF224A1E9F6009AD02E /* ViewController.m */,
 				AD6AABF724A1E9F6009AD02E /* Assets.xcassets */,
 				AD6AABF924A1E9F6009AD02E /* LaunchScreen.storyboard */,
 				AD6AABFC24A1E9F6009AD02E /* Info.plist */,
 				AD6AABFD24A1E9F6009AD02E /* main.m */,
 				AD6AAC0D24A1FC72009AD02E /* Color.m */,
 				AD6AAC0F24A1FC98009AD02E /* Color.h */,
+				AD6AAC1024A205C6009AD02E /* StartViewController.h */,
+				AD6AAC1124A205C6009AD02E /* StartViewController.m */,
+				AD6AAC1324A25733009AD02E /* Triangle.h */,
+				AD6AAC1424A25733009AD02E /* Triangle.m */,
 			);
 			path = "rs.ios-stage2-task6";
 			sourceTree = "<group>";
@@ -147,11 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD6AABF324A1E9F6009AD02E /* ViewController.m in Sources */,
+				AD6AAC1524A25733009AD02E /* Triangle.m in Sources */,
 				AD6AABED24A1E9F6009AD02E /* AppDelegate.m in Sources */,
 				AD6AAC0E24A1FC72009AD02E /* Color.m in Sources */,
+				AD6AAC1224A205C6009AD02E /* StartViewController.m in Sources */,
 				AD6AABFE24A1E9F6009AD02E /* main.m in Sources */,
-				AD6AABF024A1E9F6009AD02E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +286,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4886K9NC82;
 				INFOPLIST_FILE = "rs.ios-stage2-task6/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4886K9NC82;
 				INFOPLIST_FILE = "rs.ios-stage2-task6/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

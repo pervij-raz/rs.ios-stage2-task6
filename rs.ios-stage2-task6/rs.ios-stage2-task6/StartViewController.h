@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  StartViewController.h
 //  rs.ios-stage2-task6
 //
 //  Created by Volha Bychok on 23.06.2020.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface StartViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
