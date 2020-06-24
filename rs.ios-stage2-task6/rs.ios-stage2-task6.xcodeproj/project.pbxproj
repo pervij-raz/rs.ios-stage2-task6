@@ -14,6 +14,11 @@
 		AD6AAC0E24A1FC72009AD02E /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC0D24A1FC72009AD02E /* Color.m */; };
 		AD6AAC1224A205C6009AD02E /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC1124A205C6009AD02E /* StartViewController.m */; };
 		AD6AAC1524A25733009AD02E /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC1424A25733009AD02E /* Triangle.m */; };
+		AD6AAC1824A33455009AD02E /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC1724A33455009AD02E /* InfoViewController.m */; };
+		AD6AAC1B24A334A3009AD02E /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC1A24A334A3009AD02E /* GalleryViewController.m */; };
+		AD6AAC1E24A3907A009AD02E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC1D24A3907A009AD02E /* HomeViewController.m */; };
+		AD6AAC2224A3BC0F009AD02E /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC2024A3BC0F009AD02E /* InfoTableViewCell.m */; };
+		AD6AAC2324A3BC0F009AD02E /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6AAC2124A3BC0F009AD02E /* InfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,15 @@
 		AD6AAC1124A205C6009AD02E /* StartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		AD6AAC1324A25733009AD02E /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		AD6AAC1424A25733009AD02E /* Triangle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
+		AD6AAC1624A33455009AD02E /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		AD6AAC1724A33455009AD02E /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		AD6AAC1924A334A3009AD02E /* GalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
+		AD6AAC1A24A334A3009AD02E /* GalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
+		AD6AAC1C24A3907A009AD02E /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		AD6AAC1D24A3907A009AD02E /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		AD6AAC1F24A3BC0F009AD02E /* InfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
+		AD6AAC2024A3BC0F009AD02E /* InfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
+		AD6AAC2124A3BC0F009AD02E /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,20 +76,85 @@
 		AD6AABEA24A1E9F6009AD02E /* rs.ios-stage2-task6 */ = {
 			isa = PBXGroup;
 			children = (
+				AD6AAC2424A3BC1D009AD02E /* Start */,
+				AD6AAC2524A3BC24009AD02E /* Info */,
+				AD6AAC2624A3BC2E009AD02E /* Gallery */,
+				AD6AAC2724A3BC36009AD02E /* Home */,
+				AD6AAC2824A3BC77009AD02E /* Views */,
+				AD6AAC2924A3BC93009AD02E /* Cells */,
+				AD6AAC2A24A3BCAA009AD02E /* Helpers */,
 				AD6AABEB24A1E9F6009AD02E /* AppDelegate.h */,
 				AD6AABEC24A1E9F6009AD02E /* AppDelegate.m */,
 				AD6AABF724A1E9F6009AD02E /* Assets.xcassets */,
 				AD6AABF924A1E9F6009AD02E /* LaunchScreen.storyboard */,
 				AD6AABFC24A1E9F6009AD02E /* Info.plist */,
 				AD6AABFD24A1E9F6009AD02E /* main.m */,
-				AD6AAC0D24A1FC72009AD02E /* Color.m */,
-				AD6AAC0F24A1FC98009AD02E /* Color.h */,
+			);
+			path = "rs.ios-stage2-task6";
+			sourceTree = "<group>";
+		};
+		AD6AAC2424A3BC1D009AD02E /* Start */ = {
+			isa = PBXGroup;
+			children = (
 				AD6AAC1024A205C6009AD02E /* StartViewController.h */,
 				AD6AAC1124A205C6009AD02E /* StartViewController.m */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		AD6AAC2524A3BC24009AD02E /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				AD6AAC1624A33455009AD02E /* InfoViewController.h */,
+				AD6AAC1724A33455009AD02E /* InfoViewController.m */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		AD6AAC2624A3BC2E009AD02E /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				AD6AAC1A24A334A3009AD02E /* GalleryViewController.m */,
+				AD6AAC1924A334A3009AD02E /* GalleryViewController.h */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		AD6AAC2724A3BC36009AD02E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AD6AAC1D24A3907A009AD02E /* HomeViewController.m */,
+				AD6AAC1C24A3907A009AD02E /* HomeViewController.h */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AD6AAC2824A3BC77009AD02E /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				AD6AAC1324A25733009AD02E /* Triangle.h */,
 				AD6AAC1424A25733009AD02E /* Triangle.m */,
 			);
-			path = "rs.ios-stage2-task6";
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AD6AAC2924A3BC93009AD02E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AD6AAC1F24A3BC0F009AD02E /* InfoTableViewCell.h */,
+				AD6AAC2024A3BC0F009AD02E /* InfoTableViewCell.m */,
+				AD6AAC2124A3BC0F009AD02E /* InfoTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		AD6AAC2A24A3BCAA009AD02E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AD6AAC0D24A1FC72009AD02E /* Color.m */,
+				AD6AAC0F24A1FC98009AD02E /* Color.h */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD6AABFB24A1E9F6009AD02E /* LaunchScreen.storyboard in Resources */,
+				AD6AAC2324A3BC0F009AD02E /* InfoTableViewCell.xib in Resources */,
 				AD6AABF824A1E9F6009AD02E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,11 +227,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6AAC2224A3BC0F009AD02E /* InfoTableViewCell.m in Sources */,
 				AD6AAC1524A25733009AD02E /* Triangle.m in Sources */,
 				AD6AABED24A1E9F6009AD02E /* AppDelegate.m in Sources */,
+				AD6AAC1824A33455009AD02E /* InfoViewController.m in Sources */,
 				AD6AAC0E24A1FC72009AD02E /* Color.m in Sources */,
 				AD6AAC1224A205C6009AD02E /* StartViewController.m in Sources */,
+				AD6AAC1B24A334A3009AD02E /* GalleryViewController.m in Sources */,
 				AD6AABFE24A1E9F6009AD02E /* main.m in Sources */,
+				AD6AAC1E24A3907A009AD02E /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

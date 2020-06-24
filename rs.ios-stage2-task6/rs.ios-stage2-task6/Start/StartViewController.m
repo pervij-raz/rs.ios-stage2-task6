@@ -10,6 +10,10 @@
 #import <UIKit/UIKit.h>
 #import "Color.h"
 #import "Triangle.h"
+#import "InfoViewController.h"
+#import "GalleryViewController.h"
+#import "HomeViewController.h"
+#import "AppDelegate.h"
 
 @interface StartViewController ()
 @property (strong, nonatomic) UILabel * label;
@@ -99,30 +103,41 @@
 
 -(void)animateViews {
     CGPoint initialPoint = CGPointMake(self.stackView.arrangedSubviews[1].center.x, self.stackView.arrangedSubviews[1].center.y);
-        [UIView animateWithDuration: 4
-                       delay: 0
-                       options: UIViewAnimationOptionRepeat
-                       animations: ^{
-            self.stackView.arrangedSubviews[1].center = CGPointMake(self.stackView.arrangedSubviews[1].center.x, self.stackView.arrangedSubviews[1].center.y + 20);
-        } completion:^(BOOL finished){
-            [UIView animateWithDuration:8 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
-                self.stackView.arrangedSubviews[1].center = CGPointMake(self.stackView.arrangedSubviews[1].center.x, self.stackView.arrangedSubviews[1].center.y - 40);
-            } completion:^(BOOL finished){
-                [UIView animateWithDuration:4 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
-                    self.stackView.arrangedSubviews[1].center = initialPoint;
-                } completion:nil];
-            }];
-        }];
     
-//    [UIView animateWithDuration:10 delay:0 options:UIViewAnimationOptionRepeat animations:^{
-//        self.stackView.arrangedSubviews.lastObject.transform = CGAffineTransformRotate(self.stackView.arrangedSubviews.lastObject.transform, M_PI);
-//    } completion:^(BOOL finished){
-//        [UIView animateWithDuration:10 delay:0 options:UIViewAnimationOptionRepeat animations:^{
-//            self.stackView.arrangedSubviews.lastObject.transform = CGAffineTransformRotate(self.stackView.arrangedSubviews.lastObject.transform, -M_PI);} completion: ^(BOOL finished){}];}];
+    [UIView animateWithDuration: 4
+                          delay: 0
+                        options: UIViewAnimationOptionRepeat
+                     animations: ^{
+        self.stackView.arrangedSubviews[1].center = CGPointMake(self.stackView.arrangedSubviews[1].center.x, self.stackView.arrangedSubviews[1].center.y + 20);
+    } completion:^(BOOL finished){
+        [UIView animateWithDuration:8 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+            self.stackView.arrangedSubviews[1].center = CGPointMake(self.stackView.arrangedSubviews[1].center.x, self.stackView.arrangedSubviews[1].center.y - 40);
+        } completion:^(BOOL finished){
+            [UIView animateWithDuration:4 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+                self.stackView.arrangedSubviews[1].center = initialPoint;
+            } completion:nil];
+        }];
+    }];
+    
+    //    [UIView animateWithDuration:10 delay:0 options:UIViewAnimationOptionRepeat animations:^{
+    //        self.stackView.arrangedSubviews.lastObject.transform = CGAffineTransformRotate(self.stackView.arrangedSubviews.lastObject.transform, M_PI);
+    //    } completion:^(BOOL finished){
+    //        [UIView animateWithDuration:10 delay:0 options:UIViewAnimationOptionRepeat animations:^{
+    //            self.stackView.arrangedSubviews.lastObject.transform = CGAffineTransformRotate(self.stackView.arrangedSubviews.lastObject.transform, -M_PI);} completion: ^(BOOL finished){}];}];
 }
 
 -(void)buttonDidTap {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    UITabBarController *tabBarVC = [UITabBarController new];
+    InfoViewController *infoVC = [InfoViewController new];
+    GalleryViewController *galleryVC = [GalleryViewController new];
+    HomeViewController *homeVC = [HomeViewController new];
+    tabBarVC.viewControllers = @[infoVC, galleryVC, homeVC];
+    [infoVC setTabBarItem:[[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"info_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage: [[UIImage imageNamed:@"info_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]]];
+    [galleryVC setTabBarItem:[[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"gallery_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage: [[UIImage imageNamed:@"gallery_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]]];
+    [homeVC setTabBarItem:[[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"home_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage: [[UIImage imageNamed:@"home_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]]];
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    appDelegate.window.rootViewController = tabBarVC;
+    [appDelegate.window makeKeyAndVisible];
 }
 
 @end
