@@ -18,12 +18,14 @@
 
 @interface StartViewController ()
 @property (strong, nonatomic) UILabel * label;
-@property (strong, nonatomic) UIStackView * stackView;
+@property (strong, nonatomic) FiguresView * stackView;
 @property (strong, nonatomic) UIButton * button;
 
 @end
 
 @implementation StartViewController
+
+#pragma mark: - Life cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +33,14 @@
     [self setupContent];
     [self.button addTarget:self action:@selector(buttonDidTap) forControlEvents:UIControlEventTouchUpInside];
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [self.stackView animateViews];
+}
+
+#pragma mark: - Setup UI Components
 
 -(void)setupContent {
     [self setupLabel];
@@ -72,6 +82,8 @@
     self.button.layer.cornerRadius = 30;
     self.button.clipsToBounds = YES;
 }
+
+#pragma mark: - Actions
 
 -(void)buttonDidTap {
     UITabBarController *tabBarVC = [UITabBarController new];

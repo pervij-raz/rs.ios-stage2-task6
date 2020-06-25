@@ -21,6 +21,8 @@
 
 @implementation DetailsViewController
 
+#pragma mark: Init
+
 -(id)initWithAsset:(PHAsset *)asset {
     self = [super init];
     if (self) {
@@ -29,21 +31,20 @@
     return self;
 }
 
+#pragma mark: Lifecycle
+
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
     [self.tabBarController.tabBar setHidden:YES];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
     [self.tabBarController.tabBar setHidden:NO];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self layout];
     [self.view setBackgroundColor:[Color white]];
     [self.creationLabel setFont:[UIFont systemFontOfSize:17 weight:UIFontWeightRegular]];
@@ -55,6 +56,8 @@
     [self setup];
 }
 
+#pragma mark: Setup UI Components
+
 -(void)layout {
     self.fileImageView = [UIImageView new];
     self.creationLabel = [UILabel new];
@@ -65,12 +68,12 @@
     for (int i=0; i<uiComponents.count; i++) {
         [self.view addSubview:uiComponents[i]];
     }
-    
     [self.shareButton setBackgroundColor:[Color yellow]];
     [self.shareButton setTitleColor:[Color black] forState:UIControlStateNormal];
     [self.shareButton.titleLabel setFont:[UIFont systemFontOfSize:20 weight:UIFontWeightMedium]];
     [self.shareButton setTitle:@"Share" forState:UIControlStateNormal];
     [self.shareButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.shareButton addTarget:self action:@selector(shareButtonDidTap) forControlEvents:UIControlEventTouchUpInside];
     [[NSLayoutConstraint constraintWithItem:self.shareButton attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeHeight multiplier:1 constant:55] setActive:YES];
     [[NSLayoutConstraint constraintWithItem:self.shareButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottomMargin multiplier:1 constant:-30] setActive:YES];
     [[NSLayoutConstraint constraintWithItem:self.shareButton attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:0.66 constant:0] setActive:YES];
@@ -117,13 +120,15 @@
             [self.fileImageView setImage:[UIImage imageNamed:@"forbidden"]];
             break;
     }
-    NSMutableAttributedString *creationText = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Creation date: %@", self.asset.creationDate]];
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"HH:mm:ss dd.MM.yyyy"];
+    NSMutableAttributedString *creationText = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Creation date: %@", [formatter stringFromDate:self.asset.creationDate]]];
     [creationText setColorForText:@"Creation date:" withColor:[Color gray]];
-    [creationText setColorForText:[NSString stringWithFormat:@"%@", self.asset.creationDate] withColor:[Color black]];
+    [creationText setColorForText:[NSString stringWithFormat:@"%@", [formatter stringFromDate:self.asset.creationDate]] withColor:[Color black]];
     [self.creationLabel setAttributedText:creationText];
-    NSMutableAttributedString *modificationText = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Modification date: %@", self.asset.modificationDate]];
+    NSMutableAttributedString *modificationText = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Modification date: %@", [formatter stringFromDate:self.asset.modificationDate]]];
     [modificationText setColorForText:@"Modification date:" withColor:[Color gray]];
-    [modificationText setColorForText:[NSString stringWithFormat:@"%@", self.asset.creationDate] withColor:[Color black]];
+    [modificationText setColorForText:[NSString stringWithFormat:@"%@", [formatter stringFromDate:self.asset.modificationDate]] withColor:[Color black]];
     [self.modificationLabel setAttributedText:modificationText];
 }
 
@@ -145,6 +150,16 @@
     [self.typeLabel setAttributedText:text];
 }
 
+#pragma mark: Actions
 
+-(void)shareButtonDidTap{
+    UIImage *image = self.fileImageView.image;
+    NSArray *activityItems = @[image];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems
+                                    applicationActivities:nil];
+    [self.navigationController presentViewController:activityViewController
+                                      animated:YES
+                                    completion:nil];
+}
 
 @end

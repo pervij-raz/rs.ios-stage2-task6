@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIView * circle;
 @property (strong, nonatomic) UIView * square;
 @property (strong, nonatomic) Triangle * triangle;
+-(void)animateViews;
 @end
 
 NS_ASSUME_NONNULL_END

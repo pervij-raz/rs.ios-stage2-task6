@@ -16,18 +16,27 @@
 
 @interface HomeViewController ()
 @property (strong, nonatomic) UIStackView *stackView;
+@property (strong, nonatomic) FiguresView *figuresView;
 @end
 
 @implementation HomeViewController
 
+#pragma mark: - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.view setBackgroundColor:[Color white]];
     [self.navigationItem setTitle:@"RSSchool Task 6"];
     [self.navigationController.navigationBar setBarTintColor:[Color yellow]];
     [self setupSubviews];
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.figuresView animateViews];
+}
+
+#pragma mark: - Setup UI Components
 
 -(void)setupSubviews {
     self.stackView = [UIStackView new];
@@ -62,12 +71,12 @@
 
 -(void)setupImages{
     UIView *view = [UIView new];
-    FiguresView *figuresView = [FiguresView new];
-    [view addSubview:figuresView];
+    self.figuresView = [FiguresView new];
+    [view addSubview:self.figuresView];
     [self.stackView addArrangedSubview:view];
-    figuresView.translatesAutoresizingMaskIntoConstraints = NO;
-    [[NSLayoutConstraint constraintWithItem:figuresView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0] setActive:YES];
-    [[NSLayoutConstraint constraintWithItem:figuresView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeCenterY multiplier:1 constant:0] setActive:YES];
+    self.figuresView.translatesAutoresizingMaskIntoConstraints = NO;
+    [[NSLayoutConstraint constraintWithItem:self.figuresView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0] setActive:YES];
+    [[NSLayoutConstraint constraintWithItem:self.figuresView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeCenterY multiplier:1 constant:0] setActive:YES];
     [self createSeparatorFor:view];
 }
 
@@ -97,6 +106,8 @@
     [[NSLayoutConstraint constraintWithItem:self.stackView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTopMargin multiplier:1 constant:0] setActive:YES];
     [[NSLayoutConstraint constraintWithItem:self.stackView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottomMargin multiplier:1 constant:0] setActive:YES];
 }
+
+#pragma mark: - Actions
 
 -(void)openCV{
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://pervij-raz.github.io/rsschool-cv/cv"] options:@{} completionHandler:nil];

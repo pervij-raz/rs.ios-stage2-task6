@@ -21,11 +21,16 @@
     return self;
 }
 
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    self.circle.layer.cornerRadius = self.circle.frame.size.height/2;
+}
+
 -(void)setupImages {
     [self setConstraintsToImage:self.circle];
     [self setConstraintsToImage:self.square];
     [self setConstraintsToImage:self.triangle];
-    self.circle.layer.cornerRadius = 35;
+    self.circle.layer.cornerRadius = self.circle.frame.size.height/2;
     self.circle.clipsToBounds = YES;
     [self.circle setBackgroundColor:[Color red]];
     [self.square setBackgroundColor:[Color blue]];
@@ -36,7 +41,7 @@
     [self setSpacing:20];
     [self setDistribution:UIStackViewDistributionFillEqually];
     [self setAlignment:UIStackViewAlignmentCenter];
-    [self animateViews];
+//    [self animateViews];
 }
 
 -(void)setConstraintsToImage: (UIView*)view{
@@ -52,7 +57,23 @@
 }
 
 -(void)animateCircle {
-    
+    [UIView animateWithDuration:5 animations:^{
+        CGRect frame = self.circle.frame;
+        frame.size.height *= 1.1;
+        frame.size.width *= 1.1;
+        self.circle.frame = frame;
+    } completion:^(BOOL finished){
+        if (finished) {
+            [UIView animateWithDuration:5 animations:^{
+                CGRect frame = self.circle.frame;
+                frame.size.height *= 0.9;
+                frame.size.width *= 0.9;
+                self.circle.frame = frame;
+            } completion:^(BOOL finished) {
+                [self animateCircle];
+            }];
+        }
+    }];
 }
 
 -(void)animateSquare {
@@ -60,24 +81,32 @@
     
     [UIView animateWithDuration: 1
                           delay: 0
-                        options: UIViewAnimationOptionTransitionNone
+                        options: UIViewAnimationOptionCurveLinear
                      animations: ^{
         self.square.center = CGPointMake(self.square.center.x, self.square.center.y + self.square.bounds.size.width * 0.1);
     } completion:^(BOOL finished){
-        [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+        [UIView animateWithDuration:2 animations:^{
             self.square.center = CGPointMake(self.square.center.x, self.square.center.y - self.square.bounds.size.width * 0.2);
         } completion:^(BOOL finished){
-            [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+            [UIView animateWithDuration:1 animations:^{
                 self.square.center = initialPoint;
             } completion:^(BOOL finished){
+                if (finished) {
                 [self animateSquare];
+                }
             }];
         }];
     }];
 }
 
 -(void)animateTriangle {
-    
+    [UIView animateWithDuration:4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        [self.triangle setTransform:CGAffineTransformRotate(self.triangle.transform, M_PI_2)];
+    }completion:^(BOOL finished){
+        if (finished) {
+            [self animateTriangle];
+        }
+    }];
 }
 
 @end

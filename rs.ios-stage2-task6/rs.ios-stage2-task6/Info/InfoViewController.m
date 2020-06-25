@@ -18,6 +18,8 @@
 
 @implementation InfoViewController
 
+#pragma mark - Life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Info"];
