@@ -1,5 +1,5 @@
 //
-//  HomeViewController.h
+//  FiguresView.h
 //  rs.ios-stage2-task6
 //
 //  Created by Volha Bychok on 25.06.2020.
@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Triangle.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewController : UIViewController
-
+@interface FiguresView : UIStackView
+@property (strong, nonatomic) UIView * circle;
+@property (strong, nonatomic) UIView * square;
+@property (strong, nonatomic) Triangle * triangle;
 @end
 
 NS_ASSUME_NONNULL_END

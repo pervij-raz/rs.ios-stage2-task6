@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTitle:@"Info"];
+    [self.navigationItem setTitle:@"Info"];
     [self.navigationController.navigationBar setBarTintColor:[Color yellow]];
     [self.tableView registerNib:[UINib nibWithNibName:@"InfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"InfoTableViewCell"];
     [self.tableView setRowHeight:85];

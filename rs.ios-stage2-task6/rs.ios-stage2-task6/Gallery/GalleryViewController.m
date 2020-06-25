@@ -10,7 +10,7 @@
 #import "Color.h"
 
 @interface GalleryViewController ()
-
+@property (strong, nonatomic) UICollectionView * collectionView;
 @end
 
 @implementation GalleryViewController
@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[Color white]];
-    [self setTitle:@"Gallery"];
+    [self.navigationItem setTitle:@"Gallery"];
     [self.navigationController.navigationBar setBarTintColor:[Color yellow]];
 }
 
