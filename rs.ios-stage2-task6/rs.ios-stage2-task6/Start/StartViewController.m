@@ -104,18 +104,20 @@
 -(void)animateViews {
     CGPoint initialPoint = CGPointMake(self.stackView.arrangedSubviews[1].center.x, self.stackView.arrangedSubviews[1].center.y);
     
-    [UIView animateWithDuration: 4
+    [UIView animateWithDuration: 1
                           delay: 0
-                        options: UIViewAnimationOptionRepeat
+                        options: UIViewAnimationOptionTransitionNone
                      animations: ^{
-        self.stackView.arrangedSubviews[1].center = CGPointMake(self.stackView.arrangedSubviews[1].center.x, self.stackView.arrangedSubviews[1].center.y + 20);
+        self.stackView.arrangedSubviews[1].center = CGPointMake(self.stackView.arrangedSubviews[1].center.x, self.stackView.arrangedSubviews[1].center.y + self.stackView.arrangedSubviews[1].bounds.size.width * 0.1);
     } completion:^(BOOL finished){
-        [UIView animateWithDuration:8 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
-            self.stackView.arrangedSubviews[1].center = CGPointMake(self.stackView.arrangedSubviews[1].center.x, self.stackView.arrangedSubviews[1].center.y - 40);
+        [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+            self.stackView.arrangedSubviews[1].center = CGPointMake(self.stackView.arrangedSubviews[1].center.x, self.stackView.arrangedSubviews[1].center.y - self.stackView.arrangedSubviews[1].bounds.size.width * 0.2);
         } completion:^(BOOL finished){
-            [UIView animateWithDuration:4 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+            [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
                 self.stackView.arrangedSubviews[1].center = initialPoint;
-            } completion:nil];
+            } completion:^(BOOL finished){
+                [self animateViews];
+            }];
         }];
     }];
     
@@ -128,10 +130,11 @@
 
 -(void)buttonDidTap {
     UITabBarController *tabBarVC = [UITabBarController new];
-    InfoViewController *infoVC = [InfoViewController new];
-    GalleryViewController *galleryVC = [GalleryViewController new];
-    HomeViewController *homeVC = [HomeViewController new];
+    UINavigationController *infoVC = [[UINavigationController alloc] initWithRootViewController:[InfoViewController new]];
+    UINavigationController *galleryVC = [[UINavigationController alloc] initWithRootViewController:[GalleryViewController new]];
+    UINavigationController *homeVC = [[UINavigationController alloc] initWithRootViewController:[HomeViewController new]];
     tabBarVC.viewControllers = @[infoVC, galleryVC, homeVC];
+    [tabBarVC setSelectedIndex:1];
     [infoVC setTabBarItem:[[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"info_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage: [[UIImage imageNamed:@"info_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]]];
     [galleryVC setTabBarItem:[[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"gallery_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage: [[UIImage imageNamed:@"gallery_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]]];
     [homeVC setTabBarItem:[[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:@"home_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage: [[UIImage imageNamed:@"home_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]]];

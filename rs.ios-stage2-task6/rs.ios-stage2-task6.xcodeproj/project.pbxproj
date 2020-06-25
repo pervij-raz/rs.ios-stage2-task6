@@ -19,6 +19,8 @@
 		AD6AAC1E24A3907A009AD02E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC1D24A3907A009AD02E /* HomeViewController.m */; };
 		AD6AAC2224A3BC0F009AD02E /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6AAC2024A3BC0F009AD02E /* InfoTableViewCell.m */; };
 		AD6AAC2324A3BC0F009AD02E /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6AAC2124A3BC0F009AD02E /* InfoTableViewCell.xib */; };
+		ADD7816F24A497120051383A /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD7816E24A497120051383A /* DetailsViewController.m */; };
+		ADD7817224A4AD8D0051383A /* NSMutableAttributedString+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD7817124A4AD8D0051383A /* NSMutableAttributedString+Color.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		AD6AAC1F24A3BC0F009AD02E /* InfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
 		AD6AAC2024A3BC0F009AD02E /* InfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
 		AD6AAC2124A3BC0F009AD02E /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
+		ADD7816D24A497120051383A /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		ADD7816E24A497120051383A /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		ADD7817024A4AD8D0051383A /* NSMutableAttributedString+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Color.h"; sourceTree = "<group>"; };
+		ADD7817124A4AD8D0051383A /* NSMutableAttributedString+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Color.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 		AD6AAC2524A3BC24009AD02E /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				ADD7816C24A496AF0051383A /* Details */,
 				AD6AAC1624A33455009AD02E /* InfoViewController.h */,
 				AD6AAC1724A33455009AD02E /* InfoViewController.m */,
 			);
@@ -153,8 +160,19 @@
 			children = (
 				AD6AAC0D24A1FC72009AD02E /* Color.m */,
 				AD6AAC0F24A1FC98009AD02E /* Color.h */,
+				ADD7817024A4AD8D0051383A /* NSMutableAttributedString+Color.h */,
+				ADD7817124A4AD8D0051383A /* NSMutableAttributedString+Color.m */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		ADD7816C24A496AF0051383A /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				ADD7816D24A497120051383A /* DetailsViewController.h */,
+				ADD7816E24A497120051383A /* DetailsViewController.m */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD6AAC2224A3BC0F009AD02E /* InfoTableViewCell.m in Sources */,
+				ADD7816F24A497120051383A /* DetailsViewController.m in Sources */,
 				AD6AAC1524A25733009AD02E /* Triangle.m in Sources */,
 				AD6AABED24A1E9F6009AD02E /* AppDelegate.m in Sources */,
 				AD6AAC1824A33455009AD02E /* InfoViewController.m in Sources */,
@@ -235,6 +254,7 @@
 				AD6AAC1224A205C6009AD02E /* StartViewController.m in Sources */,
 				AD6AAC1B24A334A3009AD02E /* GalleryViewController.m in Sources */,
 				AD6AABFE24A1E9F6009AD02E /* main.m in Sources */,
+				ADD7817224A4AD8D0051383A /* NSMutableAttributedString+Color.m in Sources */,
 				AD6AAC1E24A3907A009AD02E /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
